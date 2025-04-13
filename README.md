@@ -13,12 +13,12 @@ A Spring MVC web application for managing tax filer records. This application pr
 
 ## Technologies Used
 
-- Java 8
-- Spring MVC 5.3.27
+- Java 11+
+- Spring MVC 6.0.15
 - JDBC Template for database operations
 - MySQL Database
 - JSP for views
-- JSTL for JSP templating
+- Jakarta EE 10 (for Tomcat 10.1 compatibility)
 - Bootstrap 5 for UI
 - Font Awesome for icons
 - jQuery for client-side functionality
@@ -28,7 +28,7 @@ A Spring MVC web application for managing tax filer records. This application pr
 ### Prerequisites
 
 - Eclipse IDE (latest version)
-- Apache Tomcat 9.0
+- Apache Tomcat 10.1
 - MySQL Server
 - Maven
 
@@ -53,7 +53,7 @@ git clone https://github.com/Sankalp-Sachapara/tax-filing-system.git
    ```xml
    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
-       <property name="url" value="jdbc:mysql://localhost:3306/FilersRecord?createDatabaseIfNotExist=true&amp;useSSL=false" />
+       <property name="url" value="jdbc:mysql://localhost:3306/FilersRecord?createDatabaseIfNotExist=true&amp;useSSL=false&amp;allowPublicKeyRetrieval=true" />
        <property name="username" value="root" />
        <property name="password" value="root" />
    </bean>
@@ -63,14 +63,14 @@ git clone https://github.com/Sankalp-Sachapara/tax-filing-system.git
 
 1. Click on Window > Show View > Servers
 2. Right-click in the Servers view and select New > Server
-3. Select Apache > Tomcat v9.0 Server and click Next
+3. Select Apache > Tomcat v10.1 Server and click Next
 4. Browse to your Tomcat installation directory and click Finish
 
 ### Step 5: Deploy the Application
 
 1. Right-click on the project in Project Explorer
 2. Select Run As > Run on Server
-3. Choose Tomcat v9.0 Server and click Finish
+3. Choose Tomcat v10.1 Server and click Finish
 
 The application will be deployed and the browser will open to display it.
 
@@ -98,3 +98,12 @@ The application also populates the table with sample data if it's empty.
 - `src/main/java/com/taxfiling/controller`: Contains Spring MVC controller
 - `src/main/webapp/WEB-INF/views`: Contains JSP views
 - `src/main/webapp/WEB-INF`: Contains configuration files
+
+## Jakarta EE Migration Notes
+
+This project has been migrated from Java EE (javax.*) to Jakarta EE (jakarta.*) to support running on Tomcat 10.1+. Key changes include:
+
+- Updated servlet and JSP API dependencies to Jakarta EE 10
+- Changed JSTL tags from `http://java.sun.com/jsp/jstl/core` to `jakarta.tags.core`
+- Updated web.xml to use Jakarta EE 10 schema
+- Updated Spring version to 6.0+ for Jakarta EE compatibility
