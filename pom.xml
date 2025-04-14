@@ -9,7 +9,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 
-	<name>tax-filing-system</name>
+	<n>tax-filing-system</n>
 	<description>Spring MVC web application for managing tax filer records</description>
 
 	<properties>
@@ -45,6 +45,13 @@
 			<artifactId>jakarta.servlet.jsp-api</artifactId>
 			<version>3.1.1</version>
 			<scope>provided</scope>
+		</dependency>
+		
+		<!-- Jakarta Annotation API -->
+		<dependency>
+			<groupId>jakarta.annotation</groupId>
+			<artifactId>jakarta.annotation-api</artifactId>
+			<version>2.1.1</version>
 		</dependency>
 
 		<!-- Jakarta Standard Tag Library (JSTL) -->
