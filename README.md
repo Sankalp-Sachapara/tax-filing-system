@@ -74,6 +74,38 @@ git clone https://github.com/Sankalp-Sachapara/tax-filing-system.git
 
 The application will be deployed and the browser will open to display it.
 
+## Assignment Requirements Fulfilled
+
+This application fulfills all the requirements specified in the assignment:
+
+1. **Database Setup**:
+   - Created a database named "FilersRecord"
+   - Created a table named "TaxFilers" with fields: FilerID, Name, Contact, AnnualIncome, Expenses, TaxYear
+   - Inserted 6 sample records into the table
+
+2. **Display Tax Filer Records**:
+   - All tax filer records are displayed in a table format on the main page
+
+3. **Add New Tax Filer**:
+   - A form is provided to add new tax filers
+   - Validation is performed on all fields
+   - Success/error messages are displayed after submission
+
+4. **Update Tax Filer**:
+   - Each record has an "Edit" button
+   - Clicking the button opens a form pre-filled with the record data
+   - Updated data is saved to the database
+
+5. **Delete Tax Filer**:
+   - Each record has a "Delete" button
+   - Confirmation is requested before deletion
+   - Record is removed from the database upon confirmation
+
+6. **Code Organization**:
+   - Separate DAO class for CRUD operations
+   - Spring MVC architecture with clear separation of concerns
+   - Model class for Tax_Filers
+
 ## Database Schema
 
 The application automatically creates the following database table:
@@ -107,3 +139,4 @@ This project has been migrated from Java EE (javax.*) to Jakarta EE (jakarta.*) 
 - Changed JSTL tags from `http://java.sun.com/jsp/jstl/core` to `jakarta.tags.core`
 - Updated web.xml to use Jakarta EE 10 schema
 - Updated Spring version to 6.0+ for Jakarta EE compatibility
+- Added Jakarta Annotation API for @PostConstruct support
